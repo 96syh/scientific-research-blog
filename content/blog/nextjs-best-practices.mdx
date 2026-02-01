@@ -1,0 +1,155 @@
+---
+title: "Next.js 14 最佳实践与性能优化"
+date: "2024-03-15"
+description: "深入探讨 App Router、Server Components 等核心特性，帮助开发者快速上手 Next.js 14 最新版本。"
+tags: ["Next.js", "React", "性能优化", "Server Components"]
+category: "Next.js"
+author: "DevBlog"
+coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=600&fit=crop"
+---
+
+# Next.js 14 最佳实践与性能优化
+
+Next.js 14 带来了许多激动人心的新特性，本文将深入探讨如何充分利用这些特性来构建高性能的 Web 应用。
+
+## App Router 核心概念
+
+App Router 是 Next.js 13 引入的全新路由系统，在 Next.js 14 中得到了进一步优化。
+
+### 文件系统路由
+
+在 `app` 目录下，文件夹名称直接映射为 URL 路径：
+
+```
+app/
+├── page.tsx          # /
+├── about/
+│   └── page.tsx      # /about
+├── blog/
+│   ├── page.tsx      # /blog
+│   └── [slug]/
+│       └── page.tsx  # /blog/:slug
+```
+
+### Server Components vs Client Components
+
+**Server Components**（默认）：
+- 在服务器上渲染
+- 可以直接访问数据库
+- 减少客户端 JavaScript 体积
+
+```tsx
+// 这是一个 Server Component（默认）
+async function BlogPost({ id }: { id: string }) {
+  // 可以直接在组件中获取数据
+  const post = await db.posts.findUnique({ where: { id } });
+  
+  return (
+    <article>
+      <h1>{post.title}</h1>
+      <p>{post.content}</p>
+    </article>
+  );
+}
+```
+
+**Client Components**（需要 `"use client"` 指令）：
+- 在客户端渲染
+- 可以使用 React Hooks
+- 支持事件处理
+
+```tsx
+"use client";
+
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      点击次数：{count}
+    </button>
+  );
+}
+```
+
+## 性能优化技巧
+
+### 1. 使用 `loading.tsx` 实现加载状态
+
+```tsx
+// app/blog/loading.tsx
+export default function Loading() {
+  return (
+    <div className="animate-pulse">
+      <div className="h-8 bg-gray-200 rounded w-3/4 mb-4"></div>
+      <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
+      <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+    </div>
+  );
+}
+```
+
+### 2. 图片优化
+
+使用 `next/image` 组件实现自动优化：
+
+```tsx
+import Image from "next/image";
+
+function Avatar() {
+  return (
+    <Image
+      src="/avatar.jpg"
+      alt="用户头像"
+      width={100}
+      height={100}
+      priority // 首屏图片使用 priority
+    />
+  );
+}
+```
+
+### 3. 字体优化
+
+```tsx
+import { Inter } from "next/font/google";
+
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: "swap", // 优化字体加载
+});
+```
+
+## 数据获取策略
+
+### 静态生成 (SSG)
+
+```tsx
+// 构建时生成静态页面
+export async function generateStaticParams() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ slug: post.slug }));
+}
+```
+
+### 增量静态再生成 (ISR)
+
+```tsx
+// 每 60 秒重新生成页面
+export const revalidate = 60;
+```
+
+### 服务端渲染 (SSR)
+
+```tsx
+// 强制动态渲染
+export const dynamic = "force-dynamic";
+```
+
+## 总结
+
+Next.js 14 通过 App Router、Server Components 和各种优化特性，为开发者提供了构建高性能 Web 应用的完整工具链。掌握这些最佳实践，将帮助你构建更快、更可靠的应用。
+
+> 💡 **提示**：始终关注 [Next.js 官方文档](https://nextjs.org/docs) 获取最新更新和最佳实践。

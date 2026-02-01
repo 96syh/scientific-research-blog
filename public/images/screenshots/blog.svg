@@ -1,0 +1,87 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#f9fafb"/>
+  
+  <!-- Header -->
+  <rect width="1920" height="80" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+  <text x="60" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#4F46E5">
+    SR Blog
+  </text>
+  <text x="1700" y="50" font-family="Arial, sans-serif" font-size="16" fill="#6b7280">
+    Menu ☰
+  </text>
+  
+  <!-- Page Title -->
+  <text x="200" y="180" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#1f2937">
+    Blog Articles
+  </text>
+  <text x="200" y="230" font-family="Arial, sans-serif" font-size="20" fill="#6b7280">
+    Explore our latest research insights and findings
+  </text>
+  
+  <!-- Search Bar -->
+  <rect x="200" y="270" width="600" height="50" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+  <text x="220" y="303" font-family="Arial, sans-serif" font-size="16" fill="#9ca3af">
+    🔍 Search articles...
+  </text>
+  
+  <!-- Blog Post Card 1 -->
+  <g transform="translate(200, 370)">
+    <rect width="1520" height="180" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="30" y="30" width="120" height="120" rx="8" fill="#4F46E5" opacity="0.1"/>
+    <text x="90" y="100" font-family="Arial, sans-serif" font-size="48" fill="#4F46E5" text-anchor="middle">📝</text>
+    
+    <text x="180" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1f2937">
+      Next.js Best Practices for 2026
+    </text>
+    <text x="180" y="85" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">
+      Learn the latest techniques and patterns for building modern web applications
+    </text>
+    <text x="180" y="110" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">
+      with Next.js 15 App Router, Server Components, and more...
+    </text>
+    <text x="180" y="145" font-family="Arial, sans-serif" font-size="12" fill="#9ca3af">
+      📅 Jan 15, 2026  •  ⏱️ 5 min read  •  🏷️ Next.js, React
+    </text>
+  </g>
+  
+  <!-- Blog Post Card 2 -->
+  <g transform="translate(200, 580)">
+    <rect width="1520" height="180" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="30" y="30" width="120" height="120" rx="8" fill="#7C3AED" opacity="0.1"/>
+    <text x="90" y="100" font-family="Arial, sans-serif" font-size="48" fill="#7C3AED" text-anchor="middle">⚛️</text>
+    
+    <text x="180" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1f2937">
+      React 18 Features Deep Dive
+    </text>
+    <text x="180" y="85" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">
+      Explore concurrent rendering, automatic batching, transitions, and
+    </text>
+    <text x="180" y="110" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">
+      other powerful features introduced in React 18...
+    </text>
+    <text x="180" y="145" font-family="Arial, sans-serif" font-size="12" fill="#9ca3af">
+      📅 Jan 10, 2026  •  ⏱️ 8 min read  •  🏷️ React, JavaScript
+    </text>
+  </g>
+  
+  <!-- Blog Post Card 3 -->
+  <g transform="translate(200, 790)">
+    <rect width="1520" height="180" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="30" y="30" width="120" height="120" rx="8" fill="#4F46E5" opacity="0.1"/>
+    <text x="90" y="100" font-family="Arial, sans-serif" font-size="48" fill="#4F46E5" text-anchor="middle">🔷</text>
+    
+    <text x="180" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1f2937">
+      TypeScript Advanced Types
+    </text>
+    <text x="180" y="85" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">
+      Master conditional types, mapped types, template literal types, and
+    </text>
+    <text x="180" y="110" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">
+      other advanced TypeScript features for better type safety...
+    </text>
+    <text x="180" y="145" font-family="Arial, sans-serif" font-size="12" fill="#9ca3af">
+      📅 Jan 5, 2026  •  ⏱️ 10 min read  •  🏷️ TypeScript
+    </text>
+  </g>
+</svg>

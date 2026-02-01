@@ -1,0 +1,217 @@
+---
+title: "TypeScript 高级类型系统完全指南"
+date: "2024-02-28"
+description: "从泛型约束到类型体操，全面讲解 TypeScript 类型系统的高级特性和实战应用。"
+tags: ["TypeScript", "类型系统", "进阶", "前端"]
+category: "TypeScript"
+author: "DevBlog"
+coverImage: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=1200&h=600&fit=crop"
+---
+
+# TypeScript 高级类型系统完全指南
+
+TypeScript 的类型系统是其最强大的特性之一。本文将深入探讨高级类型的使用技巧。
+
+## 泛型基础与进阶
+
+### 基本泛型
+
+```typescript
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+// 使用
+const result = identity<string>("hello");
+const inferredResult = identity(42); // 类型推断为 number
+```
+
+### 泛型约束
+
+使用 `extends` 关键字限制泛型的范围：
+
+```typescript
+interface HasLength {
+  length: number;
+}
+
+function logLength<T extends HasLength>(arg: T): T {
+  console.log(arg.length);
+  return arg;
+}
+
+// ✅ 正确
+logLength("hello");
+logLength([1, 2, 3]);
+logLength({ length: 10, value: "test" });
+
+// ❌ 错误：number 没有 length 属性
+// logLength(123);
+```
+
+### 泛型默认值
+
+```typescript
+interface ApiResponse<T = unknown> {
+  data: T;
+  status: number;
+  message: string;
+}
+
+// 使用默认类型
+const response: ApiResponse = {
+  data: "anything",
+  status: 200,
+  message: "success"
+};
+
+// 指定具体类型
+const userResponse: ApiResponse<User> = {
+  data: { id: 1, name: "张三" },
+  status: 200,
+  message: "success"
+};
+```
+
+## 条件类型
+
+条件类型根据条件选择不同的类型：
+
+```typescript
+type IsString<T> = T extends string ? true : false;
+
+type A = IsString<"hello">; // true
+type B = IsString<123>;     // false
+```
+
+### 实用的条件类型
+
+```typescript
+// 提取数组元素类型
+type ElementOf<T> = T extends (infer E)[] ? E : never;
+
+type StringElement = ElementOf<string[]>; // string
+type NumberElement = ElementOf<number[]>; // number
+
+// 提取函数返回类型
+type ReturnOf<T> = T extends (...args: any[]) => infer R ? R : never;
+
+function fetchUser(): Promise<User> {
+  return fetch("/api/user").then(res => res.json());
+}
+
+type FetchUserReturn = ReturnOf<typeof fetchUser>; // Promise<User>
+```
+
+## 映射类型
+
+映射类型可以基于现有类型创建新类型：
+
+```typescript
+// 将所有属性变为可选
+type Partial<T> = {
+  [P in keyof T]?: T[P];
+};
+
+// 将所有属性变为只读
+type Readonly<T> = {
+  readonly [P in keyof T]: T[P];
+};
+
+// 实际应用
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+type PartialUser = Partial<User>;
+// 等价于 { id?: number; name?: string; email?: string; }
+
+type ReadonlyUser = Readonly<User>;
+// 等价于 { readonly id: number; readonly name: string; readonly email: string; }
+```
+
+### 键值重映射
+
+TypeScript 4.1 引入的 `as` 关键字：
+
+```typescript
+type Getters<T> = {
+  [K in keyof T as `get${Capitalize<string & K>}`]: () => T[K];
+};
+
+interface Person {
+  name: string;
+  age: number;
+}
+
+type PersonGetters = Getters<Person>;
+// { getName: () => string; getAge: () => number; }
+```
+
+## 模板字面量类型
+
+```typescript
+type EventName = "click" | "focus" | "blur";
+type Handler = `on${Capitalize<EventName>}`;
+// "onClick" | "onFocus" | "onBlur"
+
+// 构建 CSS 属性类型
+type CSSUnit = "px" | "em" | "rem" | "%";
+type CSSValue = `${number}${CSSUnit}`;
+
+const width: CSSValue = "100px"; // ✅
+const height: CSSValue = "50%";  // ✅
+// const invalid: CSSValue = "100"; // ❌
+```
+
+## 实用工具类型
+
+TypeScript 内置了许多实用的工具类型：
+
+| 工具类型 | 描述 |
+|---------|------|
+| `Partial<T>` | 所有属性可选 |
+| `Required<T>` | 所有属性必填 |
+| `Readonly<T>` | 所有属性只读 |
+| `Pick<T, K>` | 选取指定属性 |
+| `Omit<T, K>` | 排除指定属性 |
+| `Record<K, V>` | 创建键值对类型 |
+| `Extract<T, U>` | 提取联合类型的交集 |
+| `Exclude<T, U>` | 排除联合类型的成员 |
+
+### 实战示例
+
+```typescript
+interface Article {
+  id: number;
+  title: string;
+  content: string;
+  author: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+// 创建文章时不需要 id 和时间戳
+type CreateArticleDto = Omit<Article, "id" | "createdAt" | "updatedAt">;
+
+// 更新文章时所有字段都是可选的
+type UpdateArticleDto = Partial<Omit<Article, "id">>;
+
+// 文章列表只需要基本信息
+type ArticleListItem = Pick<Article, "id" | "title" | "author" | "createdAt">;
+```
+
+## 总结
+
+TypeScript 的高级类型系统为我们提供了强大的类型表达能力：
+
+- **泛型**：实现可复用的类型安全代码
+- **条件类型**：根据条件选择类型
+- **映射类型**：基于现有类型创建新类型
+- **模板字面量类型**：构建字符串类型
+
+掌握这些高级特性，将帮助你编写更加类型安全、可维护的代码。
+
+> 🔧 **练习建议**：尝试自己实现 `DeepPartial<T>` 和 `DeepReadonly<T>` 类型！

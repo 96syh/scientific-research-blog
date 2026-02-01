@@ -1,0 +1,89 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#f9fafb"/>
+  
+  <!-- Header -->
+  <rect width="1920" height="80" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+  <text x="60" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#4F46E5">
+    SR Blog
+  </text>
+  <text x="1700" y="50" font-family="Arial, sans-serif" font-size="16" fill="#6b7280">
+    Menu ☰
+  </text>
+  
+  <!-- Hero Section -->
+  <rect x="0" y="80" width="1920" height="500" fill="url(#gradient1)"/>
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Hero Content -->
+  <text x="960" y="280" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="#1f2937" text-anchor="middle">
+    Scientific Research Blog
+  </text>
+  <text x="960" y="340" font-family="Arial, sans-serif" font-size="24" fill="#6b7280" text-anchor="middle">
+    Sharing Knowledge, Advancing Science
+  </text>
+  
+  <!-- CTA Buttons -->
+  <rect x="780" y="380" width="140" height="50" rx="8" fill="#4F46E5"/>
+  <text x="850" y="413" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle">
+    Get Started
+  </text>
+  <rect x="960" y="380" width="140" height="50" rx="8" fill="transparent" stroke="#4F46E5" stroke-width="2"/>
+  <text x="1030" y="413" font-family="Arial, sans-serif" font-size="18" fill="#4F46E5" text-anchor="middle">
+    Learn More
+  </text>
+  
+  <!-- Feature Cards -->
+  <g transform="translate(200, 650)">
+    <!-- Card 1 -->
+    <rect width="400" height="300" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <circle cx="200" cy="80" r="40" fill="#4F46E5" opacity="0.1"/>
+    <text x="200" y="88" font-family="Arial, sans-serif" font-size="32" fill="#4F46E5" text-anchor="middle">🧬</text>
+    <text x="200" y="160" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2937" text-anchor="middle">
+      Clinical Research
+    </text>
+    <text x="200" y="200" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">
+      Latest findings and
+    </text>
+    <text x="200" y="220" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">
+      clinical trial results
+    </text>
+  </g>
+  
+  <g transform="translate(760, 650)">
+    <!-- Card 2 -->
+    <rect width="400" height="300" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <circle cx="200" cy="80" r="40" fill="#7C3AED" opacity="0.1"/>
+    <text x="200" y="88" font-family="Arial, sans-serif" font-size="32" fill="#7C3AED" text-anchor="middle">🔬</text>
+    <text x="200" y="160" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2937" text-anchor="middle">
+      Detection Methods
+    </text>
+    <text x="200" y="200" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">
+      Advanced analysis
+    </text>
+    <text x="200" y="220" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">
+      techniques
+    </text>
+  </g>
+  
+  <g transform="translate(1320, 650)">
+    <!-- Card 3 -->
+    <rect width="400" height="300" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <circle cx="200" cy="80" r="40" fill="#4F46E5" opacity="0.1"/>
+    <text x="200" y="88" font-family="Arial, sans-serif" font-size="32" fill="#4F46E5" text-anchor="middle">📚</text>
+    <text x="200" y="160" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2937" text-anchor="middle">
+      Resources
+    </text>
+    <text x="200" y="200" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">
+      Comprehensive research
+    </text>
+    <text x="200" y="220" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">
+      materials library
+    </text>
+  </g>
+</svg>

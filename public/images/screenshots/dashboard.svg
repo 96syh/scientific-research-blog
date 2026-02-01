@@ -1,0 +1,101 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#f9fafb"/>
+  
+  <!-- Header -->
+  <rect width="1920" height="80" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+  <text x="60" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#4F46E5">
+    SR Blog
+  </text>
+  <text x="1700" y="50" font-family="Arial, sans-serif" font-size="16" fill="#6b7280">
+    Menu ☰
+  </text>
+  
+  <!-- Page Title -->
+  <text x="200" y="160" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#1f2937">
+    Research Dashboard
+  </text>
+  
+  <!-- Stats Cards Row -->
+  <g transform="translate(200, 220)">
+    <!-- Card 1 -->
+    <rect width="340" height="140" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="30" y="45" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">Total Articles</text>
+    <text x="30" y="90" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#4F46E5">127</text>
+    <text x="30" y="120" font-family="Arial, sans-serif" font-size="12" fill="#10b981">+12% from last month</text>
+  </g>
+  
+  <g transform="translate(580, 220)">
+    <!-- Card 2 -->
+    <rect width="340" height="140" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="30" y="45" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">Active Researchers</text>
+    <text x="30" y="90" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#7C3AED">45</text>
+    <text x="30" y="120" font-family="Arial, sans-serif" font-size="12" fill="#10b981">+8% from last month</text>
+  </g>
+  
+  <g transform="translate(960, 220)">
+    <!-- Card 3 -->
+    <rect width="340" height="140" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="30" y="45" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">Citations</text>
+    <text x="30" y="90" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#4F46E5">1.2K</text>
+    <text x="30" y="120" font-family="Arial, sans-serif" font-size="12" fill="#10b981">+23% from last month</text>
+  </g>
+  
+  <g transform="translate(1340, 220)">
+    <!-- Card 4 -->
+    <rect width="340" height="140" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="30" y="45" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">Collaborations</text>
+    <text x="30" y="90" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#7C3AED">32</text>
+    <text x="30" y="120" font-family="Arial, sans-serif" font-size="12" fill="#10b981">+15% from last month</text>
+  </g>
+  
+  <!-- Chart Section -->
+  <g transform="translate(200, 420)">
+    <rect width="1520" height="400" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="30" y="45" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2937">
+      Research Activity Overview
+    </text>
+    
+    <!-- Simple Bar Chart -->
+    <g transform="translate(80, 120)">
+      <line x1="0" y1="0" x2="0" y2="220" stroke="#e5e7eb" stroke-width="2"/>
+      <line x1="0" y1="220" x2="1360" y2="220" stroke="#e5e7eb" stroke-width="2"/>
+      
+      <!-- Bars -->
+      <rect x="50" y="100" width="120" height="120" fill="#4F46E5" opacity="0.8"/>
+      <text x="110" y="250" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Jan</text>
+      
+      <rect x="220" y="70" width="120" height="150" fill="#4F46E5" opacity="0.8"/>
+      <text x="280" y="250" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Feb</text>
+      
+      <rect x="390" y="50" width="120" height="170" fill="#4F46E5" opacity="0.8"/>
+      <text x="450" y="250" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Mar</text>
+      
+      <rect x="560" y="80" width="120" height="140" fill="#4F46E5" opacity="0.8"/>
+      <text x="620" y="250" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Apr</text>
+      
+      <rect x="730" y="40" width="120" height="180" fill="#4F46E5" opacity="0.8"/>
+      <text x="790" y="250" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">May</text>
+      
+      <rect x="900" y="20" width="120" height="200" fill="#4F46E5" opacity="0.8"/>
+      <text x="960" y="250" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Jun</text>
+      
+      <rect x="1070" y="60" width="120" height="160" fill="#7C3AED" opacity="0.8"/>
+      <text x="1130" y="250" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Jul</text>
+    </g>
+  </g>
+  
+  <!-- Recent Activity -->
+  <g transform="translate(200, 870)">
+    <rect width="1520" height="150" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="30" y="45" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2937">
+      Recent Activity
+    </text>
+    <text x="30" y="85" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">
+      • New article published: "Advanced ML Techniques" - 2 hours ago
+    </text>
+    <text x="30" y="115" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">
+      • Research collaboration started with University Lab - 5 hours ago
+    </text>
+  </g>
+</svg>

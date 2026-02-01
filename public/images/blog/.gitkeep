@@ -1,0 +1,7 @@
+# 博客图片存放目录
+
+请将博客封面图放在此目录下，然后在文章中引用：
+
+示例：
+coverImage: "/images/blog/my-cover.jpg"
+
